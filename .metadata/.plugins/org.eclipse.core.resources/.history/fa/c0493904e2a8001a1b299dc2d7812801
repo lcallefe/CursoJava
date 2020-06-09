@@ -1,8 +1,0 @@
-
-public interface Embaralhador {
-	
-	public String inverteString(String palavra);
-	public String trocaImparesPorPares(String palavra);
-	public String embaralhaAleatoriamente (String palavra);
-
-}
