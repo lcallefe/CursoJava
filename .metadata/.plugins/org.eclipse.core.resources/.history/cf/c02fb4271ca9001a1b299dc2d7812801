@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Principal {
+	
+	
+
+	public static void main(String[] args) {
+		
+		int op = 1;
+		String palpite;
+		Scanner scan = new Scanner(System.in);
+		FabricaMecanicaDoJogo fabrica = new FabricaMecanicaDoJogo();
+		System.out.println("Insira a opção do jogo: ");
+		op = scan.nextInt();
+		fabrica.mostraPalavraEmbaralhada(op);
+		System.out.println("Qual o seu palpite? ");
+        palpite = scan.next();
+        
+        
+        
+
+	}
+
+
+}

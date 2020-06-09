@@ -1,0 +1,29 @@
+
+public class FabricaEmbaralhadores {
+	
+	
+	int qualFuncao = (int) ((Math.random() * ((2) + 1)) + 1); 
+	BancoDePalavras banco = new BancoDePalavras();
+	String palavraCorreta = banco.retornaPalavraAleatoria();
+	StringInvertida str1 = new StringInvertida(palavraCorreta);
+	TrocaImparPorPar str2 = new TrocaImparPorPar(palavraCorreta);
+	EmbaralhaMetade str3 = new EmbaralhaMetade(palavraCorreta);
+
+
+	
+	public String retornaFuncaoEmbaralhadora () {
+
+		switch (qualFuncao)
+		{
+		    case 1:
+		    	return str1.embaralhaPalavra();
+		    case 2:
+		    	return str2.embaralhaPalavra();
+		    default:
+		    	return str3.embaralhaPalavra();
+		}
+		
+	}
+
+}
+

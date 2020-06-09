@@ -1,0 +1,8 @@
+
+public interface MecanicaDoJogo {
+	
+	public boolean acertou();
+	public boolean fimDoJogo();
+	public String mostraPontuacao();
+	
+}

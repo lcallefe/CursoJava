@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+
+public class EasyMode implements MecanicaDoJogo {
+	
+	FabricaEmbaralhadores fabrica = new FabricaEmbaralhadores();
+	String palavraCorreta = fabrica.palavraCorreta;
+	ArrayList<String> palavrasEmbaralhadas = fabrica.retornaFuncaoEmbaralhadora();
+	int qtdeAcertos = 0;
+	int numeroRodada = 1;
+	String palpiteUsuario;
+
+
+	@Override
+	public boolean acertou(String palpiteUsuario) {
+		if (palpiteUsuario.contentEquals(palavraCorreta)) {
+			qtdeAcertos++;
+			numeroRodada++;
+			return true;
+		}
+		numeroRodada++;
+		return false;
+	}
+
+	@Override
+	public boolean fimDoJogo() {
+		while (qtdeAcertos!=2 || numeroRodada< palavrasEmbaralhadas.size() -1) {
+			acertou(palpiteUsuario);
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public void mostraPontuacao() {
+		System.out.println("Quantidade de acertos: " + qtdeAcertos);
+	}
+
+	@Override
+	public String mostraPalavraInvertida() {
+		return "Palavra embaralhada: " + palavrasEmbaralhadas.get(numeroRodada-1);
+	}
+
+	
+	
+
+}

@@ -1,0 +1,10 @@
+
+public class HardMode implements MecanicaDoJogo {
+
+	@Override
+	public int retornaModoJogo(int opcao) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

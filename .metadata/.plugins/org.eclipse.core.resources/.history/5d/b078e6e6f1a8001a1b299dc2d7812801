@@ -1,0 +1,16 @@
+
+public class FabricaMecanicaDoJogo {
+	
+	Principal jogo = new Principal();
+	int opcaoJogo = jogo.op;
+	String palpiteUsuario = jogo.palpite;
+	
+	public void retornaMecanicaDoJogo (int opcaoJogo) {
+		if (opcaoJogo == 1)
+			new EasyMode(palpiteUsuario);
+		else 
+			new HardMode(palpiteUsuario);
+		
+	}
+
+}

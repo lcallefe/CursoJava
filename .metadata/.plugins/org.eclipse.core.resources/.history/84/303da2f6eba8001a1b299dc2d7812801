@@ -1,0 +1,8 @@
+
+public interface Embaralhador {
+	
+	public String inverteString(String palavra);
+	public String trocaImparesPorPares(String palavra);
+	public String embaralhaMetade (String palavra);
+
+}

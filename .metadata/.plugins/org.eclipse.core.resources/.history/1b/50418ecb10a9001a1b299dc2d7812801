@@ -1,0 +1,23 @@
+
+public class FabricaMecanicaDoJogo {
+	
+	Principal jogo = new Principal();
+	int opcaoJogo = jogo.op;
+	String palpiteUsuario = jogo.palpite;
+	EasyMode easy = new EasyMode ();
+	HardMode hard = new HardMode ();
+	
+	public void retornaMecanicaDoJogo (int opcaoJogo) {
+		if (opcaoJogo == 1) {
+			System.out.println(easy.mostraPalavraInvertida());
+			if (easy.fimDoJogo()) {
+				easy.mostraPontuacao();
+			}
+		
+		}
+		else 
+			System.out.println(hard.mostraPalavraInvertida());
+		
+	}
+
+}

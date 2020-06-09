@@ -1,0 +1,6 @@
+
+public interface MecanicaDoJogo {
+	
+	public int retornaModoJogo(int opcao);
+
+}

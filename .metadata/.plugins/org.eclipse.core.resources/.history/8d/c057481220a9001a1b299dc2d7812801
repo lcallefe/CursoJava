@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+
+public class FabricaEmbaralhadores {
+	
+	
+	int qualFuncao = (int) ((Math.random() * ((2) + 1)) + 1); 
+	BancoDePalavras banco = new BancoDePalavras();
+	ArrayList<String> palavrasEmbaralhadas = new ArrayList<String>();
+	String palavraCorreta;
+	int cont = 0;
+
+
+	
+	public ArrayList<String> retornaFuncaoEmbaralhadora () {
+		while (cont < banco.palavras.size() - 1) {
+			switch (qualFuncao)
+			{
+			    case 1:
+			    	 palavraCorreta = banco.retornaPalavraAleatoria();
+			    	 StringInvertida str1 = new StringInvertida(palavraCorreta);
+			    	 palavrasEmbaralhadas.add(str1.embaralhaPalavra());
+			    	 cont++;
+			    case 2:
+			    	TrocaImparPorPar str2 = new TrocaImparPorPar(banco.retornaPalavraAleatoria());
+			    	palavrasEmbaralhadas.add(str2.embaralhaPalavra());
+			    	cont++;
+			    default:
+			    	EmbaralhaMetade str3 = new EmbaralhaMetade(banco.retornaPalavraAleatoria());
+			    	palavrasEmbaralhadas.add(str3.embaralhaPalavra());
+			    	cont++;
+			}
+		}
+		
+		return palavrasEmbaralhadas;
+	}
+
+}
+

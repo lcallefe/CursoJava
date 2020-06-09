@@ -1,0 +1,32 @@
+
+public class HardMode extends EasyMode implements MecanicaDoJogo {
+
+	String palpiteUsuario;
+
+	public HardMode(String palpiteUsuario) {
+		this.palpiteUsuario = palpiteUsuario;
+	}
+
+	public void mostraPontuacao() {
+		super.mostraPontuacao();
+	}
+
+	
+	public String mostraPalavraInvertida(int numeroRodada) {
+		return super.mostraPalavraInvertida(numeroRodada);
+	}
+
+
+	
+	public boolean acertou(String palpiteUsuario, int numeroDaRodada) {
+		return super.acertou(palpiteUsuario, numeroDaRodada);
+	}
+	
+	
+	public void fimDoJogo(int numeroRodada) {
+		super.fimDoJogo(numeroRodada);
+	}
+
+		
+
+}

@@ -1,0 +1,13 @@
+
+public class HardMode extends EasyMode implements MecanicaDoJogo {
+
+	String palpiteUsuario;
+
+	public HardMode(String palpiteUsuario) {
+		this.palpiteUsuario = palpiteUsuario;
+	}
+
+	
+		
+
+}

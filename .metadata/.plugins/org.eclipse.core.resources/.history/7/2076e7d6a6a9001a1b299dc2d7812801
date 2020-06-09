@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+
+public class EasyMode implements MecanicaDoJogo {
+	
+	FabricaEmbaralhadores fabrica = new FabricaEmbaralhadores();
+	int qtdeAcertos = 0;
+	String palpiteUsuario;
+
+	
+	@Override
+	public boolean acertou(String palpiteUsuario, int numeroDaRodada) {
+		if (palpiteUsuario.contentEquals(fabrica.getPalavrasCorretas().get(numeroDaRodada - 1))) {
+			qtdeAcertos++;
+			System.out.println("\n Parabéns, você acertou! ");
+			return true;
+		}
+		System.out.println("\n Resposta errada. Tente outra vez ");
+		return false;
+	}
+
+	@Override
+	public boolean fimDoJogo (int numeroRodada) {
+		if (qtdeAcertos < 3 || numeroRodada < fabrica.getPalavrasEmbaralhadas().size()) {
+			acertou(palpiteUsuario, numeroRodada);
+			return false;
+		}
+		if (qtdeAcertos == 3) {
+			System.out.println("\n Você ganhou");
+			System.exit(1);
+		} 
+		else if (qtdeAcertos < 3 && numeroRodada == fabrica.getPalavrasEmbaralhadas().size() + 1) {
+			System.out.println("\n Game Over!");
+			System.exit(1);
+		}
+		
+		mostraPontuacao();
+		return true;
+	}
+
+	@Override
+	public void mostraPontuacao() {
+		System.out.println("Quantidade de acertos: " + qtdeAcertos);
+	}
+
+	@Override
+	public String mostraPalavraInvertida(int numeroRodada) {
+		fabrica.retornaFuncaoEmbaralhadora();
+		return "Palavra embaralhada: " + fabrica.getPalavrasEmbaralhadas().get(numeroRodada-1);
+	}
+
+	
+	
+
+}

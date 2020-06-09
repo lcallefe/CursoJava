@@ -1,0 +1,9 @@
+
+public interface MecanicaDoJogo {
+	
+	public boolean acertou(String palavra);
+	public boolean fimDoJogo();
+	public void mostraPontuacao();
+	public String mostraPalavraInvertida();
+	
+}

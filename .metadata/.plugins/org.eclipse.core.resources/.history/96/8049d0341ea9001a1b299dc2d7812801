@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class FabricaMecanicaDoJogo {
+	
+	EasyMode easy = new EasyMode ();
+	FabricaEmbaralhadores fabricaEmb = new FabricaEmbaralhadores();
+	ArrayList<String> palavrasEmbaralhadas = fabricaEmb.retornaFuncaoEmbaralhadora();
+	int numeroDaRodada = 1;
+	int totalRodadas = palavrasEmbaralhadas.size();
+	
+	public void mostraPalavraEmbaralhada (int opcaoJogo) {
+		if (opcaoJogo == 1) {
+			System.out.println(easy.mostraPalavraInvertida(numeroDaRodada));
+		
+		}
+		//else 
+			//System.out.println(hard.mostraPalavraInvertida());
+		
+	}
+	
+	public void verificaPalpiteUsuario (String palpite) {
+		easy.palpiteUsuario = palpite;
+		while (numeroDaRodada <= totalRodadas) {
+			easy.fimDoJogo(numeroDaRodada);
+			numeroDaRodada++;
+			easy.mostraPalavraInvertida(numeroRodada);
+		}
+		
+		
+	}
+
+}

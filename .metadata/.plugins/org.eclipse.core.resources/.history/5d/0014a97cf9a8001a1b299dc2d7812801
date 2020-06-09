@@ -1,0 +1,44 @@
+
+public class EasyMode implements MecanicaDoJogo {
+	
+	String palpiteUsuario;
+	FabricaEmbaralhadores fabrica = new FabricaEmbaralhadores();
+	String palavraCorreta = fabrica.palavraCorreta;
+	String palavraEmbaralhada= fabrica.retornaFuncaoEmbaralhadora();
+	int qtdeAcertos = 0;
+
+	public EasyMode(String palpiteUsuario) {
+		this.palpiteUsuario = palpiteUsuario;
+	}
+
+	@Override
+	public boolean acertou(String palpiteUsuario) {
+		if (palpiteUsuario.contentEquals(palavraCorreta)) {
+			qtdeAcertos++;
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean fimDoJogo() {
+		if (qtdeAcertos == 2)
+			return true;
+		return false;
+	}
+
+	@Override
+	public String mostraPontuacao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String mostraPalavraInvertida() {
+		return "Palavra embaralhada: " + palavraEmbaralhada;
+	}
+
+	
+	
+
+}

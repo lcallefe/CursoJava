@@ -1,0 +1,23 @@
+
+public class FabricaMecanicaDoJogo {
+	
+	EasyMode easy = new EasyMode ();
+	int numeroDaRodada = 1;
+	
+	public void mostraPalavraEmbaralhada (int opcaoJogo) {
+		if (opcaoJogo == 1) {
+			System.out.println(easy.mostraPalavraInvertida());
+		
+		}
+		//else 
+			//System.out.println(hard.mostraPalavraInvertida());
+		
+	}
+	
+	public void verificaPalpiteUsuario (String palpite) {
+		easy.palpiteUsuario = palpite;
+		
+		
+	}
+
+}
